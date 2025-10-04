@@ -1,0 +1,34 @@
+create_ideas:
+  description: >
+    Create a list of 10 different blog post ideas about the topic: {topic}. The ideas should be creative, relevant, and diverse in format, focusing on engaging the target audience.
+  expected_output: >
+    A list of 10 blog post ideas, each with a creative title and a brief summary describing the content.
+  agent: idea_developer
+
+select_idea:
+  description: >
+    Select the best idea from the generated list, justifying your choice based on its relevance and alignment with the blog’s objectives.
+  expected_output: >
+    A selected idea with a clear and concise justification explaining its relevance and alignment with the content goals.
+  agent: idea_developer
+
+plan_content:
+  description: >
+    Create a detailed briefing for the blog post, including information such as objective, target audience, tone of voice, keywords, and format.
+  expected_output: >
+    A structured briefing covering all key points necessary to guide content creation.
+  agent: content_planner
+
+write_post:
+  description: >
+    Write the full blog post content, following the briefing and the selected idea. Make sure the post is engaging, well-structured, and suitable for the target audience.
+  expected_output: >
+    A blog post with introduction, body, and conclusion, written clearly and engagingly, fully aligned with the briefing.
+  agent: post_writer
+
+review_post:
+  description: >
+    Review the blog post, correcting grammatical and punctuation errors, and improving text flow. Ensure the post aligns with the tone and objectives defined in the briefing.
+  expected_output: >
+    The revised blog post, free of grammatical errors, with good flow, and ready for publication.
+  agent: post_reviewer
