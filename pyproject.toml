@@ -5,7 +5,8 @@ description = "blogpost-creator using crewAI"
 authors = [{ name = "bzescossia", email = "bezerraescossia@gmail.com" }]
 requires-python = ">=3.10,<3.14"
 dependencies = [
-    "crewai[tools]>=0.201.1,<1.0.0"
+    "agentops>=0.4.21",
+    "crewai[tools]>=0.201.1,<1.0.0",
 ]
 
 [tool.hatch.build.targets.sdist]
