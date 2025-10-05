@@ -1,34 +1,74 @@
-create_ideas:
+content_research:
   description: >
-    Create a list of 10 different blog post ideas about the topic: {topic}. The ideas should be creative, relevant, and diverse in format, focusing on engaging the target audience.
+    The content researcher uses the SerperDevTool to search for relevant
+    information about the topic {topic}. They should identify trends,
+    related questions, and gather reference materials that will serve as
+    the foundation for content development. Keep in mind that we are in
+    the year 2025.
   expected_output: >
-    A list of 10 blog post ideas, each with a creative title and a brief summary describing the content.
-  agent: idea_developer
+    A research report containing a summary of the collected information,
+    including links to relevant sources, topics of interest, and important
+    data that will support the next steps of planning and content creation.
+  agent: content_researcher
 
-select_idea:
+content_planning:
   description: >
-    Select the best idea from the generated list, justifying your choice based on its relevance and alignment with the blog’s objectives.
+    The content planner organizes the information from the researcher's
+    report and uses the ScrapeWebsiteTool to scrape websites, creating a
+    detailed briefing that defines the content to be developed, including
+    format and structure, generating good briefings for the topic: {topic}.
   expected_output: >
-    A selected idea with a clear and concise justification explaining its relevance and alignment with the content goals.
-  agent: idea_developer
-
-plan_content:
-  description: >
-    Create a detailed briefing for the blog post, including information such as objective, target audience, tone of voice, keywords, and format.
-  expected_output: >
-    A structured briefing covering all key points necessary to guide content creation.
+    A complete briefing that clearly outlines the content structure, the
+    main points to be addressed, and a list of sources or materials to be
+    used in the article's development.
   agent: content_planner
 
-write_post:
+blog_post_writing:
   description: >
-    Write the full blog post content, following the briefing and the selected idea. Make sure the post is engaging, well-structured, and suitable for the target audience.
+    The blog writer uses the briefing developed by the content planner to
+    create a complete article on the topic {topic}, ensuring that all
+    information is presented cohesively and that the text meets the team's
+    objectives.
   expected_output: >
-    A blog post with introduction, body, and conclusion, written clearly and engagingly, fully aligned with the briefing.
-  agent: post_writer
+    The written blog post, which should be engaging, clear, and informative,
+    addressing all the points discussed in the briefing and ready for final
+    review.
+  agent: blog_writer
 
-review_post:
+content_review:
   description: >
-    Review the blog post, correcting grammatical and punctuation errors, and improving text flow. Ensure the post aligns with the tone and objectives defined in the briefing.
+    The content reviewer reviews the written article to ensure there are no
+    grammar, spelling, or clarity errors. They also add relevant information
+    that could enrich the text.
   expected_output: >
-    The revised blog post, free of grammatical errors, with good flow, and ready for publication.
-  agent: post_reviewer
+    A revised and polished document, free of errors, including all
+    improvements made and properly formatted for publication, ready to be
+    made available to the public.
+  agent: content_reviewer
+
+save_content:
+  description: >
+    Saves the content using the FileWriterTool, creating a file name that
+    makes sense in relation to the content of the text.
+  expected_output: >
+    File saved.
+  agent: content_reviewer
+
+social_media_summary:
+  description: >
+    Create a summary of the content by crafting compelling headlines and
+    short descriptions tailored for {media} posts. Focus on producing
+    attention-grabbing, keyword-rich text that encourages engagement.
+  expected_output: >
+    A set of {media}-ready headlines and short descriptions that effectively
+    summarize the content and encourage engagement, optimized for the target
+    audience and platform.
+  agent: social_media_specialist
+
+save_social_media_summary:
+  description: >
+    Saves the social media summary using the FileWriterTool, creating a file 
+    name that makes sense in relation to the content of the text.
+  expected_output: >
+    File saved.
+  agent: social_media_specialist
