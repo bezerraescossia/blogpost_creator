@@ -18,7 +18,7 @@ def run():
     Run the crew.
     """
     inputs = {
-        'topic': 'CrewAI versus LangChain',
+        'topic': 'Next Generation Sequencing Guide with Applications in Oncology for Medical Doctors',
         'media': 'LinkedIn'
     }
     

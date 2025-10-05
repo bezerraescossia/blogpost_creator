@@ -9,7 +9,7 @@ from crewai_tools import SerperDevTool, ScrapeWebsiteTool, FileWriterTool
 from typing import List
 
 import agentops
-agentops.init()
+#agentops.init()
 
 serper = SerperDevTool()
 scraper = ScrapeWebsiteTool()
@@ -114,3 +114,14 @@ class BlogpostCreator():
             process=Process.sequential,
             verbose=True,
         )
+
+if __name__ == '__main__':
+
+    inputs = {
+        'topic': 'Next Generation Sequencing Guide with Applications in Oncology for Medical Doctors',
+        'media': 'LinkedIn'
+    }
+
+    blogpost_creator = BlogpostCreator().crew()
+    results = blogpost_creator.kickoff(inputs=inputs)
+    results
